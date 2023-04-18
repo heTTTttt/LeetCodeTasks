@@ -1,7 +1,6 @@
 package solutions;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Tasks {
@@ -41,5 +40,62 @@ public class Tasks {
         StringBuilder b = builder.reverse();
 
         return y.equals(b.toString());
+    }
+    // Task #3
+    // Метод перетворює римські числові значення на арабські(звичайні).
+    public int romanToInteger(String s) {
+
+        int preSymbol = 0, sum = 0;
+        char ch = 0;
+
+
+        for (int i = 0; i < s.length(); i++) {
+            preSymbol = ch;
+            ch = s.charAt(i);
+            switch (ch) {
+                case 'I':
+                    sum++;
+                    break;
+                case 'V':
+                    if (preSymbol == 'I')
+                        sum = sum + 3;
+                    else
+                        sum = sum + 5;
+                    break;
+                case 'X':
+                    if (preSymbol == 'I')
+                        sum = sum + 8;
+                    else
+                        sum = sum + 10;
+                    break;
+                case 'L':
+                    if (preSymbol == 'X')
+                        sum = sum + 30;
+                    else
+                        sum = sum + 50;
+                    break;
+                case 'C':
+                    if (preSymbol == 'X')
+                        sum = sum + 80;
+                    else
+                        sum = sum + 100;
+                    break;
+                case 'D':
+                    if (preSymbol == 'C')
+                        sum = sum + 300;
+                    else
+                        sum = sum + 500;
+                    break;
+                case 'M':
+                    if (preSymbol == 'C')
+                        sum = sum + 800;
+                    else
+                        sum = sum + 1000;
+                default:
+                    break;
+            }
+        }
+
+        return sum;
     }
 }
