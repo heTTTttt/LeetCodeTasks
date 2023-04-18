@@ -16,6 +16,8 @@ public class Tasks {
         return null;
     }
 
+    // Task #2
+    // Метод визначає скільки є можливих варіантів здолати сходи з n-сходинками.
     public int climbStairs(int n) {
         if(n == 1) return 1;
 
@@ -32,6 +34,7 @@ public class Tasks {
     }
 
     // Task #1
+    // Метод виявляє чи є число паліндромом.
     public boolean isPalindromeNumber(int x) {
         String y = Integer.toString(x);
         StringBuilder builder = new StringBuilder(y);
